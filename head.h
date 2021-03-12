@@ -18,7 +18,7 @@
 #define Nj 500      // Size of the grid in "j";
 #define dt 0.1      // Time interval;
 #define tf 10000    // Total Time;
-#define Pp 0.4      // Predation probability;
-#define Pm 0.3      // Mobility probability - for sthocastic method;
+#define Pp 0.1      // Predation probability;
+#define Pm 0.7      // Mobility probability - for sthocastic method;
 #define Cm 1.0      // Mobility coeficient  - for RK method;
 #define Pr 0.4      // Reproduction probability;
