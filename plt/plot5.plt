@@ -1,4 +1,4 @@
-#   Imprime imagens da posição dos individuos baseadas em cada dat gerado pela simulação
+#   Print the lattice;
 set terminal pngcairo size 1080,1080
 
 set size ratio -1
@@ -20,7 +20,31 @@ set palette defined (0 "#ffffff",\
 
 do for [t=0:1000] {
     set output sprintf("rps5-%d.png", t)
-    plot sprintf("../dat/rps-%d.dat", t) u ($1+1):($2+1):($3) matrix w image t""
+    plot sprintf("../dat/rps5-%d.dat", t) u ($1+1):($2+1):($3) matrix w image t""
+    unset output
+}
+
+unset output
+unset terminal
+
+#   Print empty spots in the lattice;
+set terminal pngcairo size 1080,1080
+
+set size ratio -1
+set xrange[0:500]
+unset xtics
+set yrange[0:500]
+unset ytics
+
+set cbrange [0:1]
+unset cbtics
+unset colorbox
+
+set palette gray
+
+do for [t=0:1000] {
+    set output sprintf("rps5-%d.png", t)
+    plot sprintf("../dat/rps5-emp-%d.dat", t) u ($1+1):($2+1):($3) matrix w image t""
     unset output
 }
 
