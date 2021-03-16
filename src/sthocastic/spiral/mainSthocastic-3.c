@@ -1,6 +1,6 @@
 /**
  * Created              :   2020.09.02;
- * Last Update          :   2021.03.15;
+ * Last Update          :   2021.03.16;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   based in RPS game rules sthocastic simulation of 3 species competing between then;
@@ -29,22 +29,29 @@ int main(int argc, char **argv) {
 
     double action;
     int i, j,
-        k = 0,
+        k = 0,      //  k       -> Counter of 
         l, t,
         gd,         //  gd      -> grid;
         act,        //  act     -> Active;
         pas,        //  pas     -> Passive;
         nebr,       //  nebr    -> Neighboor;
         temp,       //  temp    -> Temporary;
+        dst0 = 0,   //  Densinty of empty spots;
+        dst1 = 0,   //  Densinty of specie 1;
+        dst2 = 0,   //  Densinty of specie 2;
+        dst3 = 0,   //  Densinty of specie 3;
         *phi = calloc(Ni*Nj, sizeof(int));  //  phi -> pointer that locates each individual in the grid;
 
     gsl_rng_default_seed = (argc == 2) ? atoi(argv[1]) : time(NULL);
     gsl_rng *rng = gsl_rng_alloc(gsl_rng_taus);
 
+    FILE *file = fopen("dst3.dat", "w");
+
 //  Initial conditions;
     for (i = 0; i < Ni; i++) {
         for (j = 0; j < Nj; j++) {
             phi[i*Nj+j] = gsl_rng_uniform(rng)*4;
+            phi[i*Nj+j] == 0 ? dst0++ : phi[i*Nj+j] == 1 ? dst1++ : phi[i*Nj+j] == 2 ? dst2++ : dst3++;
         };
     };
 //  printing initial conditions;
@@ -53,6 +60,7 @@ int main(int argc, char **argv) {
 //  Main Loop;
     for (t = 0; t < tf+1; t++) {
         gd = 0;
+        fprintf(file, "%e %e %e %e %e\n", t, dst1/(Ni*Nj), dst1/(Ni*Nj), dst2/(Ni*Nj), dst3/(Ni*Nj));
         while (gd < Ni*Nj) {
             do {
                 i = gsl_rng_uniform(rng)*Ni;
@@ -96,6 +104,8 @@ int main(int argc, char **argv) {
                 };
             };
         };
+
+        phi[i*Nj+j] == 0 ? dst0++ : phi[i*Nj+j] == 1 ? dst1++ : phi[i*Nj+j] == 2 ? dst2++ : dst3++;
         if (t%(tf/1000) == 0) {
             op(k++, phi);
             printf("%d%%\n", t/(tf/100));
@@ -103,6 +113,7 @@ int main(int argc, char **argv) {
     };
 
     gsl_rng_free(rng);
+    fclose(file);
     free(phi);
     return 0;
 };

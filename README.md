@@ -1,4 +1,4 @@
-Basically what i have produced to my Cientific Iniciation (from portuguese, Iniciação Científica), everything is based on this [article](https://github.com/Gabriel-Marino/marino-ic21-rps/blob/main/avelino2012.pdf).
+Basically what i have produced to my Cientific Iniciation (from portuguese, Iniciação Científica).
 
 I have used the RPS, Lotka-Volterra and May-Leonards models to simulate the competition between 3, 4 and 5 species.
 
