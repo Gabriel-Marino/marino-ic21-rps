@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
 //  Main Loop;
     for (t = 0; t < tf+1; t++) {
         gd = 0;
-        fprintf(file, "%e %e %e %e %e %e %e\n", t, dst0/(Ni*Nj), dst1/(Ni*Nj), dst2/(Ni*Nj), dst3/(Ni*Nj), dst4/(Ni*Nj), dst5/(Ni*Nj));
+        fprintf(file, "%d %e %e %e %e %e %e\n", t, (double) dst0/(Ni*Nj), (double) dst1/(Ni*Nj), (double) dst2/(Ni*Nj), (double) dst3/(Ni*Nj), (double) dst4/(Ni*Nj), (double) dst5/(Ni*Nj));
         while (gd < Ni*Nj) {
             do {
                 i = gsl_rng_uniform(rng)*Ni;
