@@ -27,6 +27,10 @@ the followings:
 - [Three- and four-state rock-paper-scissors games with diffusion](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.78.031906)
 - [Death by starvation in May-Leonard models](https://iopscience.iop.org/article/10.1209/0295-5075/126/68002)
 
+# Execution
+
+Soon, by now i don't have time to describe, but VEM Aí
+
 # Contact
 
 If you wanted to, you can contact me by mine email: gcmarino404@gmail.com or [mine twitter](https://twitter.com/gmarinohimself) and you can contact mine advisor/supervisor Professor Breno Ferraz de Oliveira, PhD by his email breno@dfi.uem.br.
