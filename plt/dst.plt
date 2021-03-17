@@ -4,17 +4,22 @@ set output "dst3.png"
 
 set size ratio 1
 
-set xlabel "Tempo"
-#set xrange[0:100]
-#set xtics 10
+set xlabel "Geração"
+set xrange[0:5000]
+set xtics 1000
 
 set ylabel "Densidade"
-#set yrange[0:100]
-#set ytics 10
+set yrange[0:1]
+set ytics 0.1
 
 unset cbrange
 unset cbtics
 unset colorbox
+
+set palette defined (0 "#ffffff",\
+                     1 "#ff0000",\
+                     2 "#0000ff",\
+                     3 "#ffff00")
 
 plot for [i=1:4] "../dat/dst3.dat" u 1:i+1 w l lw 1 t"Espécie ".(i-1)
 
@@ -27,17 +32,23 @@ set output "dst4.png"
 
 set size ratio 1
 
-set xlabel "Tempo"
-#set xrange[0:100]
-#set xtics 10
+set xlabel "Geração"
+set xrange[0:5000]
+set xtics 1000
 
 set ylabel "Densidade"
-#set yrange[0:100]
-#set ytics 10
+set yrange[0:1]
+set ytics 0.1
 
 unset cbrange
 unset cbtics
 unset colorbox
+
+set palette defined (0 "#ffffff",\
+                     1 "#ff0000",\
+                     2 "#0000ff",\
+                     3 "#ffff00",\
+                     4 "#ff00ff"))
 
 plot for [i=1:5] "../dat/dst4.dat" u 1:i+1 w l lw 1 t"Espécie ".(i-1)
 
@@ -50,17 +61,24 @@ set output "dst5.png"
 
 set size ratio 1
 
-set xlabel "Tempo"
-#set xrange[0:100]
-#set xtics 10
+set xlabel "Geração"
+set xrange[0:5000]
+set xtics 1000
 
 set ylabel "Densidade"
-#set yrange[0:100]
-#set ytics 10
+set yrange[0:1]
+set ytics 0.1
 
 unset cbrange
 unset cbtics
 unset colorbox
+
+set palette defined (0 "#ffffff",\
+                     1 "#ff0000",\
+                     2 "#0000ff",\
+                     3 "#ffff00",\
+                     4 "#ff00ff",\
+                     5 "#00ffff")
 
 plot for [i=1:6] "../dat/dst5.dat" u 1:i+1 w l lw 1 t"Espécie ".(i-1)
 

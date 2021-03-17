@@ -97,9 +97,6 @@ int main(int argc, char **argv) {
 //              Predation
                 if (action <= Pm+Pp) {
                     if (phi[act]%3+1 == phi[pas]) {
-                        (phi[pas] == 0) ? dst0-- : (
-                        (phi[pas] == 1) ? dst1-- : (
-                        (phi[pas] == 2) ? dst2-- : dst3--));
                         phi[pas] = 0;
                         gd++;
                     };
@@ -107,12 +104,17 @@ int main(int argc, char **argv) {
                 } else {
                     if (phi[pas] == 0) {
                         phi[pas] = phi[act];
-                        (phi[act] == 0) ? dst0++ : (
-                        (phi[act] == 1) ? dst1++ : (
-                        (phi[act] == 2) ? dst2++ : dst3++));
                         gd++;
                     };
                 };
+            };
+        };
+        dst0 = 0; dst1 = 0; dst2 = 0; dst3 = 0;
+        for (i = 0; i < Ni; i++) {
+            for (j = 0; j < Nj; j++) {
+                (phi[i*Nj+j] == 0) ? dst0++ : (
+                (phi[i*Nj+j] == 1) ? dst1++ : (
+                (phi[i*Nj+j] == 2) ? dst2++ : dst3++));
             };
         };
         if (t%(tf/1000) == 0) {
