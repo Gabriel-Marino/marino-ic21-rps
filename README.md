@@ -14,7 +14,7 @@ generates clusters of each specie.
 
 What differs from each boundary condition is, in the Spiral ones each specie cannot predate they predator, but in Domain they can.
 
-For a better undestandment you can read this [article](https://github.com/Gabriel-Marino/marino-ic21-rps/blob/main/avelino2012.pdf) which is the principle idea comes, or one of 
+For a better undestandment you can read this [article](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.86.036112) which is the principle idea comes, or one of 
 the followings:
 
 - [The rock–paper–scissors game and the evolution of alternative male strategies](https://www.nature.com/articles/380240a0)
