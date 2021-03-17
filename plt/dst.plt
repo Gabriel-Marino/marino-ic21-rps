@@ -5,12 +5,12 @@ set output "dst3.png"
 set size ratio 1
 
 set xlabel "Tempo"
-set xrange[0:100]
-set xtics 10
+#set xrange[0:100]
+#set xtics 10
 
 set ylabel "Densidade"
-set yrange[0:1]
-set  ytics 0.1
+#set yrange[0:100]
+#set  ytics 10
 
 unset cbrange
 unset cbtics
@@ -28,12 +28,12 @@ set output "dst4.png"
 set size ratio 1
 
 set xlabel "Tempo"
-set xrange[0:100]
-set xtics 10
+#set xrange[0:100]
+#set xtics 10
 
 set ylabel "Densidade"
-set yrange[0:1]
-set  ytics 0.1
+#set yrange[0:100]
+#set  ytics 10
 
 unset cbrange
 unset cbtics
@@ -51,12 +51,12 @@ set output "dst5.png"
 set size ratio 1
 
 set xlabel "Tempo"
-set xrange[0:100]
-set xtics 10
+#set xrange[0:100]
+#set xtics 10
 
 set ylabel "Densidade"
-set yrange[0:1]
-set  ytics 0.1
+#set yrange[0:100]
+#set  ytics 10
 
 unset cbrange
 unset cbtics

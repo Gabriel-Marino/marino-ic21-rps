@@ -111,12 +111,11 @@ int main(int argc, char **argv) {
                     };
                 };
             };
+            (phi[act] == 0) ? dst0++ : (
+            (phi[act] == 1) ? dst1++ : (
+            (phi[act] == 2) ? dst2++ : (
+            (phi[act] == 3) ? dst3++ : dst4++)));
         };
-
-        (phi[i*Nj+j] == 0) ? dst0++ : (
-        (phi[i*Nj+j] == 1) ? dst1++ : (
-        (phi[i*Nj+j] == 2) ? dst2++ : (
-        (phi[i*Nj+j] == 3) ? dst3++ : dst4++)));
         if (t%(tf/1000) == 0) {
             // op(k++, phi);
             printf("%d%%\n", t/(tf/100));
