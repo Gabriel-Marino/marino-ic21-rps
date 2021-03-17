@@ -34,3 +34,7 @@ If you wanted to, you can contact me by mine email: gcmarino404@gmail.com or [mi
 # Acknowledgements
 
 I'm really thankful to Professor Breno to acept guide me and to everything he made to me. I'm Thankful to Conselho Nacional de Desenvolvimento Científico e Tecnologico - Fundação Auraucária (CNPq - FA) to support this cientific iniciation. And by last, but not less meaningfull, to my parents which support me everytime and every inciative of mine.
+
+# License
+
+[MIT](https://github.com/Gabriel-Marino/marino-ic21-rps/blob/28ef34b012f86e58ae73f0dba14dfba4eb5aa464/LICENSE)
