@@ -14,7 +14,7 @@ Those i have used Sthocastic method is totally based on random number generation
 differes from the boundary conditions to the domains ones models; these name are based in the expected result for each one, where spirals models generate spirals and domains 
 generates clusters of each specie.
 
-What differs from each boundary condition is, in the Spiral ones each specie cannot predate they predator, but in Domain they can.
+What differs from each boundary condition is, in the Spiral ones each species cannot predate they predator, but in Domain they can.
 
 # About
 
