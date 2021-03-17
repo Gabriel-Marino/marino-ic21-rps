@@ -1,3 +1,6 @@
+#Studying the generalized rock-paper-scissor model in context of dynamic populations.
+##Estudando o modelo generalizado pedra-papel-tesoura no contexto da dinâmica de populações.
+
 Basically what i have produced to my Cientific Iniciation (from portuguese, Iniciação Científica).
 
 I have used the RPS, Lotka-Volterra and May-Leonards models to simulate the competition between 3, 4 and 5 species.
