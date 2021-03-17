@@ -3,7 +3,7 @@
 
 
 
-Basically what i have produced to my Cientific Iniciation (from portuguese, Iniciação Científica - IC -).
+Basically what i have produced to my Cientific Iniciation (from portuguese, Iniciação Científica (_IC_)).
 
 I have used the RPS, Lotka-Volterra and May-Leonards models to simulate the competition between 3, 4 and 5 species.
 
