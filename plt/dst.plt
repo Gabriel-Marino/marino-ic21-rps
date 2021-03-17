@@ -10,7 +10,7 @@ set xlabel "Tempo"
 
 set ylabel "Densidade"
 #set yrange[0:100]
-#set  ytics 10
+#set ytics 10
 
 unset cbrange
 unset cbtics
@@ -33,7 +33,7 @@ set xlabel "Tempo"
 
 set ylabel "Densidade"
 #set yrange[0:100]
-#set  ytics 10
+#set ytics 10
 
 unset cbrange
 unset cbtics
@@ -56,7 +56,7 @@ set xlabel "Tempo"
 
 set ylabel "Densidade"
 #set yrange[0:100]
-#set  ytics 10
+#set ytics 10
 
 unset cbrange
 unset cbtics
