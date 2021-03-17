@@ -13,3 +13,5 @@ for ((i = 3; i <= 5; i++))
         rm *.out
         # rm dat/*.dat
     done
+
+clear

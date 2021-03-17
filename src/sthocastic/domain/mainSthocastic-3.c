@@ -45,22 +45,27 @@ int main(int argc, char **argv) {
     gsl_rng_default_seed = (argc == 2) ? atoi(argv[1]) : time(NULL);
     gsl_rng *rng = gsl_rng_alloc(gsl_rng_taus);
 
-    FILE *file = fopen("dst3.dat", "w");
+    FILE *file = fopen("dat/dst3.dat", "w");
 
 //  Initial conditions;
     for (i = 0; i < Ni; i++) {
         for (j = 0; j < Nj; j++) {
             phi[i*Nj+j] = gsl_rng_uniform(rng)*4;
-            phi[i*Nj+j] == 0 ? dst0++ : phi[i*Nj+j] == 1 ? dst1++ : phi[i*Nj+j] == 2 ? dst2++ : dst3++;
+            (phi[i*Nj+j] == 0) ? dst0++ : (
+            (phi[i*Nj+j] == 1) ? dst1++ : (
+            (phi[i*Nj+j] == 2) ? dst2++ : dst3++));
         };
     };
 //  printing initial conditions;
-    op(k, phi);
+    // op(k, phi);
 
 //  Main Loop;
     for (t = 0; t < tf+1; t++) {
         gd = 0;
-        fprintf(file, "%d %e %e %e %e\n", t, (double) dst1/(Ni*Nj), (double) dst1/(Ni*Nj), (double) dst2/(Ni*Nj), (double) dst3/(Ni*Nj));
+        fprintf(file, "%d %e %e %e %e\n", k++,  (double) dst0/(Ni*Nj),
+                                                (double) dst1/(Ni*Nj),
+                                                (double) dst2/(Ni*Nj),
+                                                (double) dst3/(Ni*Nj));
         while (gd < Ni*Nj) {
             do {
                 i = gsl_rng_uniform(rng)*Ni;
@@ -105,9 +110,11 @@ int main(int argc, char **argv) {
             };
         };
 
-        phi[i*Nj+j] == 0 ? dst0++ : phi[i*Nj+j] == 1 ? dst1++ : phi[i*Nj+j] == 2 ? dst2++ : dst3++;
+        (phi[i*Nj+j] == 0) ? dst0++ : (
+        (phi[i*Nj+j] == 1) ? dst1++ : (
+        (phi[i*Nj+j] == 2) ? dst2++ : dst3++));
         if (t%(tf/1000) == 0) {
-            op(k++, phi);
+            // op(k++, phi);
             printf("%d%%\n", t/(tf/100));
         };
     };

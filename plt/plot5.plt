@@ -1,7 +1,7 @@
 #   Print the lattice;
 set terminal pngcairo size 1080,1080
 
-set size ratio -1
+set size ratio 1
 set xrange[0:500]
 unset xtics
 set yrange[0:500]
@@ -30,7 +30,7 @@ unset terminal
 #   Print empty spots in the lattice;
 set terminal pngcairo size 1080,1080
 
-set size ratio -1
+set size ratio 1
 set xrange[0:500]
 unset xtics
 set yrange[0:500]
