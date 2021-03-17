@@ -29,3 +29,7 @@ the followings:
 # Contact
 
 If you wanted to, you can contact me by mine email: gcmarino404@gmail.com or [mine twitter](https://twitter.com/gmarinohimself) and you can contact mine advisor/supervisor Professor Breno Ferraz de Oliveira, PhD by his email breno@dfi.uem.br.
+
+# Acknowledgements
+
+I'm really thankful to Professor Breno to acept guide me and what everything wahte he made to me. I'm Thankful to Conselho Nacional de Desenvolvimento Científico e Tecnologico - Fundação Auraucária (CNPq - FA) to support this cientific inciation. And by last, but not less meaningfull, to my parents which support me everytime and every inciative of mine.
