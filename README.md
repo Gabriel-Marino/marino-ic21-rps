@@ -17,7 +17,7 @@ What differs from each boundary condition is, in the Spiral ones each specie can
 
 # About
 
-For a better undestandment you can read this [article](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.86.036112) which is the principle idea comes, or one of 
+For a better undestandment you can read this [article](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.86.036112) where from the main idea comes, or one of 
 the followings:
 
 - [The rock–paper–scissors game and the evolution of alternative male strategies](https://www.nature.com/articles/380240a0)
