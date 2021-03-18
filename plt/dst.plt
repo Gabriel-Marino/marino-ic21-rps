@@ -1,15 +1,15 @@
 #   Print the density of species;
-set terminal pngcairo size 1080,1080
+set terminal pngcairo size 1280,800
 set output "dst3.png"
 
-set size ratio 2
+set size ratio 0.5
 
 set xlabel "Geração"
 set xrange[0:5000]
 set xtics 1000
 
 set ylabel "Densidade"
-set yrange[0:1]
+set yrange[0:0.5]
 set ytics 0.1
 
 unset cbrange
@@ -27,17 +27,17 @@ unset output
 unset terminal
 
 #   Print the density of species;
-set terminal pngcairo size 1080,1080
+set terminal pngcairo size 1280,800
 set output "dst4.png"
 
-set size ratio 2
+set size ratio 0.5
 
 set xlabel "Geração"
 set xrange[0:5000]
 set xtics 1000
 
 set ylabel "Densidade"
-set yrange[0:1]
+set yrange[0:0.5]
 set ytics 0.1
 
 unset cbrange
@@ -56,17 +56,17 @@ unset output
 unset terminal
 
 #   Print the density of species;
-set terminal pngcairo size 1080,1080
+set terminal pngcairo size 1280,800
 set output "dst5.png"
 
-set size ratio 2
+set size ratio 0.5
 
 set xlabel "Geração"
 set xrange[0:5000]
 set xtics 1000
 
 set ylabel "Densidade"
-set yrange[0:1]
+set yrange[0:0.5]
 set ytics 0.1
 
 unset cbrange
