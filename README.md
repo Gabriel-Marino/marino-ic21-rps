@@ -29,7 +29,14 @@ the followings:
 
 # Execution
 
-Soon, by now i don't have time to describe, but VEM Aí
+To execute you will need gcc (you can see how install [here](https://gcc.gnu.org/install/)), libgsl-dev (which contains the random number generator utilized) and gnuplot. You 
+can change some params in header file ([head.h](https://github.com/Gabriel-Marino/marino-ic21-rps/blob/main/head.h)), in header file have too how to compile and execute each 
+simulation separatelly. If you wanted to, you can the shell scripts i have made to run every simulation with similar results(i.e. runDomain.sh whil run the three simulation 
+which generate domains results) and within compilation and run, the shell script will automatically generates images inside plt folder with gnuplot and the remove every outfile 
+from the simulations. If you chose to run each simulation separatelly, i have made gnuplot scripts (which is inside of plt folder) which you can use to generate images as 
+output.
+
+**WIP**
 
 # Contact
 
