@@ -48,7 +48,7 @@ set palette defined (0 "#ffffff",\
                      1 "#ff0000",\
                      2 "#0000ff",\
                      3 "#ffff00",\
-                     4 "#ff00ff"))
+                     4 "#ff00ff")
 
 plot for [i=1:5] "../dat/dst4.dat" u 1:i+1 w l lw 1 t"Espécie ".(i-1)
 
