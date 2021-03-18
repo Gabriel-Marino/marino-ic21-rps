@@ -2,7 +2,7 @@
 set terminal pngcairo size 1080,1080
 set output "dst3.png"
 
-set size ratio 1
+set size ratio 2
 
 set xlabel "Geração"
 set xrange[0:5000]
@@ -30,7 +30,7 @@ unset terminal
 set terminal pngcairo size 1080,1080
 set output "dst4.png"
 
-set size ratio 1
+set size ratio 2
 
 set xlabel "Geração"
 set xrange[0:5000]
@@ -59,7 +59,7 @@ unset terminal
 set terminal pngcairo size 1080,1080
 set output "dst5.png"
 
-set size ratio 1
+set size ratio 2
 
 set xlabel "Geração"
 set xrange[0:5000]
