@@ -12,16 +12,16 @@ set ylabel "Densidade"
 set yrange[0:0.5]
 set ytics 0.1
 
-unset cbrange
+set cbrange [0:3]
 unset cbtics
 unset colorbox
 
 set palette defined (0 "#000000",\
-                     1 "#ff0000",\
-                     2 "#0000ff",\
-                     3 "#ffff00")
+                     1 "#FF0000",\
+                     2 "#0000FF",\
+                     3 "#FFFF00")
 
-plot for [i=1:4] "../dat/dst3.dat" u 1:i+1 w l lw 1 lc palette t"Espécie ".(i-1)
+plot for [i=1:4] "../dat/dst3.dat" u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
@@ -40,17 +40,17 @@ set ylabel "Densidade"
 set yrange[0:0.5]
 set ytics 0.1
 
-unset cbrange
+set cbrange [0:4]
 unset cbtics
 unset colorbox
 
 set palette defined (0 "#000000",\
-                     1 "#ff0000",\
-                     2 "#0000ff",\
-                     3 "#ffff00",\
-                     4 "#ff00ff")
+                     1 "#FF0000",\
+                     2 "#0000FF",\
+                     3 "#FFFF00",\
+                     4 "#FF00FF")
 
-plot for [i=1:5] "../dat/dst4.dat" u 1:i+1 w l lw 1 lc palette t"Espécie ".(i-1)
+plot for [i=1:5] "../dat/dst4.dat" u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
@@ -69,18 +69,18 @@ set ylabel "Densidade"
 set yrange[0:0.5]
 set ytics 0.1
 
-unset cbrange
+set cbrange [0:5]
 unset cbtics
 unset colorbox
 
-set palette defined (0 "#000000",\
-                     1 "#ff0000",\
-                     2 "#0000ff",\
-                     3 "#ffff00",\
-                     4 "#ff00ff",\
-                     5 "#00ffff")
+set palette defined ( 0 "#000000",\
+                     1 "#FF0000",\
+                     2 "#0000FF",\
+                     3 "#FFFF00",\
+                     4 "#FF00FF",\
+                     5 "#00FFFF")
 
-plot for [i=1:6] "../dat/dst5.dat" u 1:i+1 w l lw 1 lc palette t"Espécie ".(i-1)
+plot for [i=1:6] "../dat/dst5.dat" u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
