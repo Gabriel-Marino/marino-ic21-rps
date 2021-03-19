@@ -1,6 +1,6 @@
 /**
  * Created              :   2020.09.02;
- * Last Update          :   2021.03.17;
+ * Last Update          :   2021.03.18;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   based in RPS game rules sthocastic simulation of 5 species competing between then;
@@ -61,7 +61,7 @@ int main(int argc, char **argv) {
         };
     };
 //  printing initial conditions;
-    // op(k, phi);
+    op(k, phi);
 
 //  Main Loop;
     for (t = 0; t < tf+1; t++) {
@@ -126,7 +126,7 @@ int main(int argc, char **argv) {
             };
         };
         if (t%(tf/1000) == 0) {
-            // op(k++, phi);
+            op(k++, phi);
             printf("%d%%\n", t/(tf/100));
         };
     };

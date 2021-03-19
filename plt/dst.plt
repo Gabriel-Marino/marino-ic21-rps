@@ -16,12 +16,12 @@ unset cbrange
 unset cbtics
 unset colorbox
 
-set palette defined (0 "#ffffff",\
+set palette defined (0 "#000000",\
                      1 "#ff0000",\
                      2 "#0000ff",\
                      3 "#ffff00")
 
-plot for [i=1:4] "../dat/dst3.dat" u 1:i+1 w l lw 1 t"Espécie ".(i-1)
+plot for [i=1:4] "../dat/dst3.dat" u 1:i+1 w l lw 1 lc palette t"Espécie ".(i-1)
 
 unset output
 unset terminal
@@ -44,13 +44,13 @@ unset cbrange
 unset cbtics
 unset colorbox
 
-set palette defined (0 "#ffffff",\
+set palette defined (0 "#000000",\
                      1 "#ff0000",\
                      2 "#0000ff",\
                      3 "#ffff00",\
                      4 "#ff00ff")
 
-plot for [i=1:5] "../dat/dst4.dat" u 1:i+1 w l lw 1 t"Espécie ".(i-1)
+plot for [i=1:5] "../dat/dst4.dat" u 1:i+1 w l lw 1 lc palette t"Espécie ".(i-1)
 
 unset output
 unset terminal
@@ -73,14 +73,14 @@ unset cbrange
 unset cbtics
 unset colorbox
 
-set palette defined (0 "#ffffff",\
+set palette defined (0 "#000000",\
                      1 "#ff0000",\
                      2 "#0000ff",\
                      3 "#ffff00",\
                      4 "#ff00ff",\
                      5 "#00ffff")
 
-plot for [i=1:6] "../dat/dst5.dat" u 1:i+1 w l lw 1 t"Espécie ".(i-1)
+plot for [i=1:6] "../dat/dst5.dat" u 1:i+1 w l lw 1 lc palette t"Espécie ".(i-1)
 
 unset output
 unset terminal
