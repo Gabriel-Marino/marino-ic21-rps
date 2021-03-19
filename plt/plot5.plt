@@ -43,7 +43,7 @@ unset colorbox
 set palette gray
 
 do for [t=0:1000] {
-    set output sprintf("rps5-%d.png", t)
+    set output sprintf("rps5-emp-%d.png", t)
     plot sprintf("../dat/rps5-emp-%d.dat", t) u ($1+1):($2+1):($3) matrix w image t""
     unset output
 }
