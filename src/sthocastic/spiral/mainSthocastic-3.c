@@ -32,8 +32,7 @@ void op(int t, int *phi) {
 
 int main(int argc, char **argv) {
 
-    double  action,
-            *inv_emp = malloc(tf, sizeof(double));
+    double  action;
     int i, j,
         k = 0,      //  k       -> Counter of 
         l, t,
@@ -52,7 +51,7 @@ int main(int argc, char **argv) {
     gsl_rng *rng = gsl_rng_alloc(gsl_rng_taus);
 
     FILE *file = fopen("dat/dst3.dat", "w");        //  File where the densities will be printed;
-    FILE *file = fopen("dat/log_emp.dat", "w");     //  File where the inverse of the empty spots density in logarithmic scale will be printed;
+    //FILE *file = fopen("dat/log_emp.dat", "w");     //  File where the inverse of the empty spots density in logarithmic scale will be printed;
 
 //  Initial conditions;
     for (i = 0; i < Ni; i++) {
@@ -69,7 +68,6 @@ int main(int argc, char **argv) {
 //  Main Loop;
     for (t = 0; t < tf+1; t++) {
         gd = 0;
-        inv_emp[t] = 1/(dst0/(Ni*Nj));
         fprintf(file, "%d %e %e %e %e\n", t, (double) dst0/(Ni*Nj),
                                              (double) dst1/(Ni*Nj),
                                              (double) dst2/(Ni*Nj),
