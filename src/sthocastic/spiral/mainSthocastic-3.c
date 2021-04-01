@@ -1,12 +1,17 @@
 /**
  * Created              :   2020.09.02;
- * Last Update          :   2021.03.18;
+ * Last Update          :   2021.04.01;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   based in RPS game rules sthocastic simulation of 3 species competing between then;
  */
 
 #include "../../../head.h"
+
+#define Ns 3                                //  Number of species;
+const double p[Ns*Ns] = {0.0, 1.0, 0.0,     //  Predation matrix, each line represent one predator specie and each column prey specie;
+                         0.0, 0.0, 1.0,     //  where have 1.0 indicates that exist predation interacting;
+                         1.0, 0.0, 0.0};
 
 //  Output (op) function, print the results into .dat archives;
 void op(int t, int *phi) {
@@ -27,7 +32,8 @@ void op(int t, int *phi) {
 
 int main(int argc, char **argv) {
 
-    double action;
+    double  action,
+            *inv_emp = malloc(tf, sizeof(double));
     int i, j,
         k = 0,      //  k       -> Counter of 
         l, t,
@@ -45,12 +51,13 @@ int main(int argc, char **argv) {
     gsl_rng_default_seed = (argc == 2) ? atoi(argv[1]) : time(NULL);
     gsl_rng *rng = gsl_rng_alloc(gsl_rng_taus);
 
-    FILE *file = fopen("dat/dst3.dat", "w");
+    FILE *file = fopen("dat/dst3.dat", "w");        //  File where the densities will be printed;
+    FILE *file = fopen("dat/log_emp.dat", "w");     //  File where the inverse of the empty spots density in logarithmic scale will be printed;
 
 //  Initial conditions;
     for (i = 0; i < Ni; i++) {
         for (j = 0; j < Nj; j++) {
-            phi[i*Nj+j] = gsl_rng_uniform(rng)*4;
+            phi[i*Nj+j] = gsl_rng_uniform(rng)*(Ns+1);
             (phi[i*Nj+j] == 0) ? dst0++ : (
             (phi[i*Nj+j] == 1) ? dst1++ : (
             (phi[i*Nj+j] == 2) ? dst2++ : dst3++));
@@ -62,6 +69,7 @@ int main(int argc, char **argv) {
 //  Main Loop;
     for (t = 0; t < tf+1; t++) {
         gd = 0;
+        inv_emp[t] = 1/(dst0/(Ni*Nj));
         fprintf(file, "%d %e %e %e %e\n", t, (double) dst0/(Ni*Nj),
                                              (double) dst1/(Ni*Nj),
                                              (double) dst2/(Ni*Nj),
@@ -72,7 +80,7 @@ int main(int argc, char **argv) {
                 j = gsl_rng_uniform(rng)*Nj;
                 act = i*Nj+j;
             } while (phi[act] == 0);
-            nebr = gsl_rng_uniform(rng)*4;
+            nebr = gsl_rng_uniform(rng)*(Ns+1);
             switch (nebr) {
                 case 0:
                     pas = ((i+1)%Ni)*Nj+j;
@@ -96,7 +104,8 @@ int main(int argc, char **argv) {
             } else {
 //              Predation
                 if (action <= Pm+Pp) {
-                    if (phi[act]%3+1 == phi[pas]) {
+                    // if (phi[act]%3+1 == phi[pas]) {
+                    if (phi[pas] != 0 && act < p[(phi[act]-1)*Ns+phi[pas]-1]) {
                         phi[pas] = 0;
                         gd++;
                     };

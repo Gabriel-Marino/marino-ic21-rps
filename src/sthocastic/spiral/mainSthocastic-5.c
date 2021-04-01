@@ -1,12 +1,19 @@
 /**
  * Created              :   2020.09.02;
- * Last Update          :   2021.03.18;
+ * Last Update          :   2021.04.01;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   based in RPS game rules sthocastic simulation of 5 species competing between then;
  */
 
 #include "../../../head.h"
+
+#define Ns 5                                            //  Number of species;
+const double p[Ns*Ns] = {0.0, 1.0, 1.0, 1.0, 0.0,       //  Predation matrix, each line represent one predator specie and each column prey specie;
+                         0.0, 0.0, 1.0, 1.0, 1.0,       //  where have 1.0 indicates that exist predation interacting;
+                         1.0, 0.0, 0.0, 1.0, 1.0,
+                         1.0, 1.0, 0.0, 0.0, 1.0,
+                         1.0, 1.0, 1.0, 0.0, 0.0};
 
 //  Output (op) function, print the results into .dat archives;
 void op(int t, int *phi) {
@@ -102,7 +109,8 @@ int main(int argc, char **argv) {
             } else {
 //              Predation
                 if (action <= Pm+Pp) {
-                    if (phi[act]%5+1 == phi[pas] || (phi[act]+1)%5+1 == phi[pas] || (phi[act]+2)%5+1 == phi[pas]) {
+                    // if (phi[act]%5+1 == phi[pas] || (phi[act]+1)%5+1 == phi[pas] || (phi[act]+2)%5+1 == phi[pas]) {
+                    if (phi[pas] != 0 && act < p[(phi[act]-1)*Ns+phi[pas]-1]) {
                         phi[pas] = 0;
                         gd++;
                     };

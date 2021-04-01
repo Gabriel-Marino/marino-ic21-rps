@@ -1,12 +1,17 @@
 /**
  * Created              :   2020.09.02;
- * Last Update          :   2021.03.18;
+ * Last Update          :   2021.04.01;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   based in RPS game rules sthocastic simulation of 3 species competing between then;
  */
 
 #include "../../../head.h"
+
+#define Ns 3                                //  Number of species;
+const double p[Ns*Ns] = {0.0, 1.0, 1.0,     //  Predation matrix, each line represent one predator specie and each column prey specie;
+                         1.0, 0.0, 1.0,     //  where have 1.0 indicates that exist predation interacting;
+                         1.0, 1.0, 0.0};
 
 //  Output (op) function, print the results into .dat archives;
 void op(int t, int *phi) {

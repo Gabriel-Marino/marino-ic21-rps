@@ -6,7 +6,7 @@
  * Notes                :   Simulation of dynamic populations with Rock-Paper-Scissor model using Runge-Kutta method;
  */
 
-#include "../head.h"
+#include "../../head.h"
 
 //  Output (op) function, print the results into .dat archives;
 void op(int t, double *p1, double *p2, double *p3, double *p0) {
