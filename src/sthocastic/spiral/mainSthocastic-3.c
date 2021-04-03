@@ -1,6 +1,6 @@
 /**
  * Created              :   2020.09.02;
- * Last Update          :   2021.04.01;
+ * Last Update          :   2021.04.03;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   based in RPS game rules sthocastic simulation of 3 species competing between then;
@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
     gsl_rng *rng = gsl_rng_alloc(gsl_rng_taus);
 
     FILE *file = fopen("dat/dst3.dat", "w");        //  File where the densities will be printed;
-    //FILE *file = fopen("dat/log_emp.dat", "w");     //  File where the inverse of the empty spots density in logarithmic scale will be printed;
+    // FILE *file = fopen("dat/log_emp.dat", "w");     //  File where the inverse of the empty spots density in logarithmic scale will be printed;
 
 //  Initial conditions;
     for (i = 0; i < Ni; i++) {
@@ -78,7 +78,7 @@ int main(int argc, char **argv) {
                 j = gsl_rng_uniform(rng)*Nj;
                 act = i*Nj+j;
             } while (phi[act] == 0);
-            nebr = gsl_rng_uniform(rng)*(Ns+1);
+            nebr = gsl_rng_uniform(rng)*4;
             switch (nebr) {
                 case 0:
                     pas = ((i+1)%Ni)*Nj+j;
@@ -103,7 +103,7 @@ int main(int argc, char **argv) {
 //              Predation
                 if (action <= Pm+Pp) {
                     // if (phi[act]%3+1 == phi[pas]) {
-                    if (phi[pas] != 0 && act < p[(phi[act]-1)*Ns+phi[pas]-1]) {
+                    if (phi[pas] != 0 && action < p[(phi[act]-1)*Ns+phi[pas]-1]) {
                         phi[pas] = 0;
                         gd++;
                     };

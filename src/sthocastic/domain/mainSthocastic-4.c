@@ -1,6 +1,6 @@
 /**
  * Created              :   2020.09.02;
- * Last Update          :   2021.04.01;
+ * Last Update          :   2021.04.03;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   based in RPS game rules sthocastic simulation of 4 species competing between then;
@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
 //  Initial conditions;
     for (i = 0; i < Ni; i++) {
         for (j = 0; j < Nj; j++) {
-            phi[i*Nj+j] = gsl_rng_uniform(rng)*5;
+            phi[i*Nj+j] = gsl_rng_uniform(rng)*(Ns+1);
             (phi[i*Nj+j] == 0) ? dst0++ : (
             (phi[i*Nj+j] == 1) ? dst1++ : (
             (phi[i*Nj+j] == 2) ? dst2++ : (
