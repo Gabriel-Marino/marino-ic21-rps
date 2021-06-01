@@ -2,12 +2,21 @@
 
     for ((i = 3; i <= 5; i++))
         do
-            gcc -O3 src/sthocastic/spiral/mainSthocastic-${i}.c -static -lgsl -lgslcblas -lm -o simRPS-${i}.out
-            for ((j = 1; j <= 250; j++))
+            gcc -O3 src/sthocastic/spiral/mainSthocastic-${i}.c -static -lgsl -lgslcblas -lm -o simRPS-spiral-${i}.out
+            gcc -O3 src/sthocastic/domain/mainSthocastic-${i}.c -static -lgsl -lgslcblas -lm -o simRPS-domain-${i}.out
+            for ((j = 1; j <= 1; j++))
                 do
-                    ./simRPS-${i}.out ${j}
+                    ./simRPS-spiral-${i}.out ${j}
+                    ./simRPS-domain-${i}.out ${j}
+                    cd plt/pdf/
+                    for file in *.plt;
+                        do
+                            gnuplot $file ${j}
+                        done
+                    cd ../../
                 done
-            rm simRPS-${i}.out
+            rm simRPS-spiral-${i}.out
+            rm simRPS-domain-${i}.out
         done
 
     # cd plt/tex/
@@ -16,12 +25,12 @@
     #         gnuplot $file
     #     done
     # cd ../../
-    # cd plt/pdf/
-    # for file in *.plt;
-    #     do
-    #         gnuplot $file
-    #     done
-    # cd ../../
+    cd plt/pdf/
+    for file in *.plt;
+        do
+            gnuplot $file
+        done
+    cd ../../
 
     # rm dat/*
 

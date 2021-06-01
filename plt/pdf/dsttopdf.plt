@@ -1,6 +1,8 @@
 #   Print the density of species;
 set terminal pdfcairo #size 1280,800
-set output "dst3.pdf"
+set output "../../pdf/dst3.pdf"
+
+numSim = ARG1
 
 set size ratio 0.5
 
@@ -21,14 +23,14 @@ set palette defined (0 "#000000",\
                      2 "#0000FF",\
                      3 "#FFFF00")
 
-plot for [i=1:4] "../../dat/dst3.dat" u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
+plot for [i=1:4] sprintf("../../dat/dst/dst-spiral-3-%d.dat", numSim) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
 
 #   Print the density of species;
 set terminal pdfcairo #size 1280,800
-set output "dst4.pdf"
+set output "../../pdf/dst4.pdf"
 
 set size ratio 0.5
 
@@ -50,14 +52,14 @@ set palette defined (0 "#000000",\
                      3 "#FFFF00",\
                      4 "#FF00FF")
 
-plot for [i=1:5] "../../dat/dst4.dat" u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
+plot for [i=1:5] sprintf("../../dat/dst/dst-spiral-4-%d.dat", numSim) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
 
 #   Print the density of species;
 set terminal pdfcairo #size 1280,800
-set output "dst5.pdf"
+set output "../../pdf/dst5.pdf"
 
 set size ratio 0.5
 
@@ -80,7 +82,7 @@ set palette defined ( 0 "#000000",\
                      4 "#FF00FF",\
                      5 "#00FFFF")
 
-plot for [i=1:6] "../../dat/dst5.dat" u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
+plot for [i=1:6] sprintf("../../dat/dst/dst-spiral-5-%d.dat", numSim) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
