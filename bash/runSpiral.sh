@@ -11,7 +11,7 @@
                     cd plt/pdf/
                     for file in *.plt;
                         do
-                            gnuplot $file ${j}
+                            gnuplot -persist -c $file ${j}
                         done
                     cd ../../
                 done

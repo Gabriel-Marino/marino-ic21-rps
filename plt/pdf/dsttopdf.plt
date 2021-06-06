@@ -2,8 +2,6 @@
 set terminal pdfcairo #size 1280,800
 set output "../../pdf/dst3.pdf"
 
-numSim = ARG1
-
 set size ratio 0.5
 
 set xlabel "Geração"
@@ -23,7 +21,7 @@ set palette defined (0 "#000000",\
                      2 "#0000FF",\
                      3 "#FFFF00")
 
-plot for [i=1:4] sprintf("../../dat/dst/dst-spiral-3-%d.dat", numSim) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
+plot for [i=1:4] sprintf("../../dat/dst/dst-spiral-3-%d.dat", 1) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
@@ -52,7 +50,7 @@ set palette defined (0 "#000000",\
                      3 "#FFFF00",\
                      4 "#FF00FF")
 
-plot for [i=1:5] sprintf("../../dat/dst/dst-spiral-4-%d.dat", numSim) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
+plot for [i=1:5] sprintf("../../dat/dst/dst-spiral-4-%d.dat", 1) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
@@ -82,7 +80,7 @@ set palette defined ( 0 "#000000",\
                      4 "#FF00FF",\
                      5 "#00FFFF")
 
-plot for [i=1:6] sprintf("../../dat/dst/dst-spiral-5-%d.dat", numSim) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
+plot for [i=1:6] sprintf("../../dat/dst/dst-spiral-5-%d.dat", 1) u 1:i+1 w l lw 1 lc palette cb (i-1) t"Espécie ".(i-1)
 
 unset output
 unset terminal
