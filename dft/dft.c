@@ -1,6 +1,6 @@
 /**
  * Created              :   2021.06.04;
- * Last Update          :   2021.06.04;
+ * Last Update          :   2021.06.08;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   Calculates the discrete Fourier Transform of the data inputted;
@@ -26,16 +26,17 @@ int count_lines(char *name) {
 int main(int argc, char **argv) {
 
     char *data = argv[1], name[100];
-    int n = count_lines(data), 
-        i, t;
-    double          *f_t = calloc(n, sizeof(double));
+    int n = count_lines(data), i, t;
+    double          *f_t = calloc(n, sizeof(double)),
+                    *c   = calloc(1, sizeof(double));       /*  the data i've used have 5 column and i just need the data on the 3rd column,
+                                                                so i used this variable to throw away the two 1st columns;*/
 //                  *f_i = calloc(n, sizeof(double));       // can be used to do the inverse dft;
     double complex  *g_f = calloc(n/2, sizeof(double complex));
     FILE *file;
 
     file = fopen(data, "r");
     for (t = 0; t < n; t++) {
-        fscanf(file, "%lf", &f_t[t]);
+        fscanf(file, "%lf %lf %lf", &c[0], &c[0], &f_t[t]);
     };
     fclose(file);
 
@@ -47,7 +48,7 @@ int main(int argc, char **argv) {
     };
     g_f[0] /= 2.0;
 
-    sprintf(name, "dft-%s", data);
+    sprintf(name, "../dat/dft/dft-%s", data);
     file = fopen(name, "w");
     for (i = 0; i < n/2; i++) {
         fprintf(file, "%e\n", cabs(g_f[i])*cabs(g_f[i]));

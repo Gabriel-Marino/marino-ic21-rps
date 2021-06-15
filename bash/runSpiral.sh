@@ -1,23 +1,45 @@
 #!/bin/bash
 
+    gcc -O3 dft/dft.c -static -lgsl -lgslcblas -lm -o dft.out
+
     for ((i = 3; i <= 5; i++))
         do
             gcc -O3 src/sthocastic/spiral/mainSthocastic-${i}.c -static -lgsl -lgslcblas -lm -o simRPS-spiral-${i}.out
-            gcc -O3 src/sthocastic/domain/mainSthocastic-${i}.c -static -lgsl -lgslcblas -lm -o simRPS-domain-${i}.out
+            # gcc -O3 src/sthocastic/domain/mainSthocastic-${i}.c -static -lgsl -lgslcblas -lm -o simRPS-domain-${i}.out
             for ((j = 1; j <= 1; j++))
                 do
                     ./simRPS-spiral-${i}.out ${j}
-                    ./simRPS-domain-${i}.out ${j}
+                    # ./simRPS-domain-${i}.out ${j}
                     cd plt/pdf/
                     for file in *.plt;
                         do
                             gnuplot -persist -c $file ${j}
                         done
                     cd ../../
+                    cd dat/dst/
+                    for file in *.dat;
+                        do
+                            ./../../dft.out $file
+                        done
+                    cd ../../
                 done
             rm simRPS-spiral-${i}.out
-            rm simRPS-domain-${i}.out
+            # rm simRPS-domain-${i}.out
         done
+
+    cd plt/pdf/
+    for file in *.plt;
+        do
+            gnuplot $file
+        done
+    cd ../../
+
+    rm dat/*
+    rm dat/act/*
+    rm dat/dft/*
+    rm dat/dst/*
+    rm dat/emp/*
+    rm *.out
 
     # cd plt/tex/
     # for file in *.plt;
@@ -25,12 +47,6 @@
     #         gnuplot $file
     #     done
     # cd ../../
-    cd plt/pdf/
-    for file in *.plt;
-        do
-            gnuplot $file
-        done
-    cd ../../
 
     # rm dat/*
 

@@ -10,10 +10,13 @@ set xlabel "Geração"
 set xrange[1:10000]
 
 set ylabel "I_{e}^{-1}"
-set yrange[1:100]
+set yrange[1:50]
 
 set log x
 set log y
+
+set format x "10^{%T}"
+set format y "10^{%T}"
 
 unset cbrange
 unset cbtics
