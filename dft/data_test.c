@@ -12,9 +12,9 @@ int main(int argc, char **argv) {
     FILE *cos3 = fopen("3-cos.dat", "w");
 
     for (int i = 0; i < 500; i++) {
-        fprintf(cos1, "%e\n", 5.0*cos(10.0*M_PI*i/500));
-        fprintf(cos2, "%e\n", 2.0*cos(10.0*M_PI*i/500));
-        fprintf(cos3, "%e\n", 5.0*cos(10.0*M_PI*i/500)+2.0*gsl_rng_uniform(rng)-1.0);
+        fprintf(cos1, "%e %e %e\n", 1.0*i, 2.0*i, 5.0*cos(10.0*M_PI*i/500));
+        fprintf(cos2, "%e %e %e\n", 1.0*i, 2.0*i, 2.0*cos(10.0*M_PI*i/500));
+        fprintf(cos3, "%e %e %e\n", 1.0*i, 2.0*i, 5.0*cos(10.0*M_PI*i/500)+2.0*gsl_rng_uniform(rng)-1.0);
     };
 
     fclose(cos1);

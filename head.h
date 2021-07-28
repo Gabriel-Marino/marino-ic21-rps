@@ -1,6 +1,6 @@
 /**
  * Created              :   2020.09.02;
- * Last Update          :   2021.05.28;
+ * Last Update          :   2021.06.11;
  * Author               :   Gabriel Marino de Oliveira <ra115114@uem.br>;
  * Supervisor/Advisor   :   Breno Ferraz de Oliveira <>;
  * Notes                :   
@@ -10,15 +10,15 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
-#include <time.h>
-#include <complex.h>
-#include <gsl/gsl_rng.h>
+#include <math.h>           //  add mathematical operations;
+#include <time.h>           //  add functions to work with time and date, in this case used only to get the seconds counter from 01/01/1970;
+#include <complex.h>        //  add complex number operations;
+#include <gsl/gsl_rng.h>    //  add pseudo-random number generators;
 
 #define Ni  500     //  Size of the grid in "i", or abscissa axis;
 #define Nj  500     //  Size of the grid in "j", or ordinate axis;
 #define dt  0.1     //  Time interval;
-#define tf  5000    //  Total Time, or number of generations;
+#define tf  10000   //  Total Time, or number of generations;
 #define Pp  0.3     //  Predation probability;
 #define Pm  0.4     //  Mobility probability for sthocastic method;
                     /** Is not necessary to sthocastic method define the Reproduction probability, here we assume which "Pp + Pm + Pr = 1" or "Pr = 1 - (Pp + Pm)",
@@ -26,5 +26,5 @@
 #define Cm  1.0     //  Mobility coeficient for RK method;
 #define Pr  0.4     //  Reproduction probability;
 
-#define np  100                             //  Number of points which will be printed when used a logarithmic scale;
-const double r = pow((tf/dt), (1.0/np));    //  r stands for ratio, will used to generate a arithmetic progression, useful to print equally spaced point
+#define np  100                                 //  Number of points which will be printed when used a logarithmic scale;
+// const double r = pow((tf/dt), (1.0/np));        //  r stands for ratio, will used to generate a arithmetic progression, useful to print equally spaced point

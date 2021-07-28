@@ -14,3 +14,7 @@ gnuplot dft.plt
 
 rm *.dat
 rm *.out
+rm ../dat/dft/*.dat
+
+clear
+echo "made it!"
