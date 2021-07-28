@@ -4,7 +4,7 @@ Basically what i have produced to my Cientific Iniciation (from portuguese, Inic
 # Studying the generalized rock-paper-scissor model in context of dynamic populations.
 ## Estudando o modelo generalizado pedra-papel-tesoura no contexto da dinâmica de populações.
 
-_**The most important to say is, this project is in many ways an exploration of my skills as programmer and a bunch of things wont work as like i would intentend to work. So the code i share here is to help criativelly and inspire another people a give a try to make as they like to make.**_
+_**The most important to say is, this project is in many ways an exploration of my skills as programmer and a bunch of things wont work as like i would intentend to work. So the code i share here is to help criativelly and inspire another people give a try to make their codes as they like to make.**_
 
 I have used the RPS, Lotka-Volterra and May-Leonards models to simulate the competition between 3, 4 and 5 species.
 
